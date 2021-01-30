@@ -46,7 +46,6 @@ namespace MeguminReactions
             await Loggers.LogEventAsync(new LogMessage(LogSeverity.Info, "Casting...", "Starting MeguminReactions")).ConfigureAwait(false);
 
             Globals.InitConfig();
-            Globals.InitListener();
 
             await Loggers.LogEventAsync(new LogMessage(LogSeverity.Info, "Setup", "Initializing Modules...")).ConfigureAwait(false);
 
