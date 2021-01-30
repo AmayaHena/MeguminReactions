@@ -8,6 +8,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using MeguminReactions.Services;
+using MeguminReactions.HTTPRequests;
 
 namespace MeguminReactions.Data
 {
@@ -17,8 +18,6 @@ namespace MeguminReactions.Data
 
         public static DiscordSocketClient Client;
 
-        //public static DbSystem Db = new DbSystem();
-
         public static string DebugWebhookUrl { get; private set; }
 
         private static Listener _listener;
@@ -26,8 +25,8 @@ namespace MeguminReactions.Data
         public static void InitListener() 
         {
             _listener = new Listener("http://localhost:8000/MeguminReactions/");
-            // _listener.OnMessageReceived += /* Method to do */;
-
+            _listener.OnMessageReceived += Reaction.sendDiscordMessage;
+            _listener.StartListening();
         }
 
         public static void InitConfig()
