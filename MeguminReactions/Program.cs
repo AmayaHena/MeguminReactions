@@ -14,7 +14,7 @@ namespace MeguminReactions
 {
     class Program
     {
-        // public readonly DiscordSocketClient Client;
+
         public readonly CommandService commands = new CommandService();
 
         public Program()

@@ -24,9 +24,8 @@ namespace MeguminReactions.HTTPRequests
             foreach (var guild in Globals.Client.Guilds)
             {
                 await guild.DownloadUsersAsync();
-                SocketGuildUser usr = guild.GetUser(req.UserId);
 
-                if (usr != null)
+                if (guild.GetUser(req.UserId) is SocketGuildUser usr)
                 {
                     var dm = await usr.GetOrCreateDMChannelAsync();
                     await dm.SendMessageAsync(req.Message);

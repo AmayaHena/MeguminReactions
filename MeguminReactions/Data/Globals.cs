@@ -22,6 +22,9 @@ namespace MeguminReactions.Data
 
         private static Listener _listener;
 
+        /// <summary>
+        /// Initialization of the <see cref="Listener"/>
+        /// </summary>
         public static void InitListener() 
         {
             _listener = new Listener("http://localhost:8000/MeguminReactions/");
@@ -38,6 +41,7 @@ namespace MeguminReactions.Data
                 throw new FileNotFoundException("Missing critical informations in Credentials.json, please complete mandatory informations before continuing");
 
             BotToken = ConfigurationJson.Value<string>("botToken");
+            Globals.InitListener();
         }
 
     }
