@@ -4,6 +4,9 @@
 
 Discord Bot to send private message from an http Request.
 
+Invite link:
+https://discordapp.com/oauth2/authorize?client_id=805126998283911189&scope=bot
+
 ## Build
 
 VS 2019
