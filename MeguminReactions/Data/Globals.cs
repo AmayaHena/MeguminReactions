@@ -27,7 +27,7 @@ namespace MeguminReactions.Data
         /// </summary>
         public static void InitListener() 
         {
-            _listener = new Listener("http://localhost:8000/MeguminReactions/");
+            _listener = new Listener("http://localhost:4242/MeguminReactions/");
             _listener.OnMessageReceived += Reaction.sendDiscordMessage;
             _listener.StartListening();
         }
